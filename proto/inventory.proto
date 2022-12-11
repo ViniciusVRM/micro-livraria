@@ -18,3 +18,8 @@ message ProductResponse {
 message ProductsResponse {
     repeated ProductResponse products = 1;
 }
+
+service InventoryService {
+    rpc SearchAllProducts(Empty) returns (ProductsResponse) {}
+    rpc SearchProductByID(Payload) returns (ProductResponse) {}
+}
